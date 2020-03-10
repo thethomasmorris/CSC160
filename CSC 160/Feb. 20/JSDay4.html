@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Day 4</title>
+
+    </head>
+    <body>
+        <h1>Making Decisions in JavaScript</h1>
+        <h2>Identity Operators, Multi-way IFs, switch statements, and Nested IFs</h2>
+
+    <script>
+        // logical operator ! (not)
+        // reverses a condition
+        var age = parseInt(prompt("Enter your age? "));
+        if (!(age>=16)) { // same as if age<16
+            document.write("You not old enough to drive.<br><br>");
+        }
+        
+        // identity and non-identity operators
+        // === (identity operators) performs string equality meaning the data type and the value matches
+        // !== (non-identity operator) opposite of identity
+        if (3===3) { //evaluates to true
+            document.write("For 3===3 the data types and values are the same.<br><br>");
+        } 
+        if (3==="3") { //evaluates to false
+            document.write("This will never print.");
+        } else {
+            document.write("For 3===\"3\" the date types and values are different.<br><br>");
+        }
+        // note the \" in a string lets us print a "
+        // the backslash \ is serving as the escape character
+        
+        //non-identity example
+        if (3!=="3") {
+            document.write("For 3!==\"3\" the condition is true because they are not the same data types.<br><br>");
+        }
+        
+        // the backslash can also be used for new lines
+        var choice = parseInt(prompt("Choose an item form the menu:\n1. Kit-Kat\n2. Hershey Bar\n3. Reese's Cup"));
+        
+        //first look at multi-way if statement
+        if (choice == 1){
+            document.write("You chose a Kit-Kat bar.<br>");
+        } else if (choice == 2) {
+            document.write("You chose a Hershey bar.<br>");
+        } else if (choice == 3) {
+            document.write("You chose a Reese's Cup.<br>");
+        } else {
+            document.write("You did not choose a valid option.<br>");
+        }
+        
+        // a switch statement can do the same thing.
+        switch(choice) {
+            case 1:
+                document.write("You chose a Kit-Kat bar.<br>");
+                break;
+            case 2:
+                document.write("You chose a Hershey bar.<br>");
+                break;
+            case 3:
+                document.write("You chose a Reese's Cup.<br>");
+                break;
+            default: 
+                document.write("You did not choose a valid option.<br>");
+                     } 
+        // more compound criteria
+            // if you live in KY and income<40000, tax is 0.06
+            //if you live in KY and income >=40000, tax is 0.07
+            //if you live in OH and income <40000, tax is 0.06
+            //if you live in OH and income >=40000, tax is 0.08
+        // order of precedence -- NOT then AND the OR
+        
+        var state = "OH";
+        var income = 49000;
+        var tax_rate;
+        
+        if ((state=="KY" || state=="OH") &&income<40000)  {
+                tax_rate = 0.06;
+        } else if (state=="KY"&&income>=40000) {
+            tax_rate = 0.07;
+        } else if (state=="OH"&&income>=40000) {
+            tax_rate = 0.08;
+        }
+        document.write(tax_rate+"<br><br>");
+        
+        // now with nested IF statements
+        if (state =="KY") {
+            if (income<40000) {
+                tax_rate = 0.06;
+            } else tax_rate = 0.07;
+            } else if (state=="OH") {
+                if (income<40000) {
+                    tax_rate == 0.06;
+                } else tax_rate = 0.08;
+            }
+         document.write(tax_rate+"<br><br>");
+        
+        //truthy and falsy values
+        //truthy values are non-boolean values that evaluate to true - all non-zero numbers are truthy
+        
+        choice = 5
+        if(choice) {
+            document.write("This will print because 5 is a truthy value.<br>")
+        }
+        
+        //null & 0 are falsy values
+        
+        choice = 0
+        if(choice){
+            document.write("This won't execute.")
+        } else {
+            document.write("this will print because null is a falsy value.<br>")
+        }
+        
+    </script>
+    </body>
+</html>

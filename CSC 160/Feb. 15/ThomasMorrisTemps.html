@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Temperature Conversion</title>
+</head>
+<body>
+<h1>IF statement Lab - Temperature Conversion</h1>
+    
+<script>
+
+var temp = parseInt(prompt("Enter a temperature: "));
+var degrees = prompt("Is this in degrees Celsius or Fahrenheit? Enter c or f.");
+
+if (degrees == "c" || degrees == "C") {
+    var newtemp = temp*(9/5)+32;
+    var newtemp2 = Math.round(newtemp*100)/100;
+    document.write(temp+"°C is "+newtemp2+"°F<br>");
+} else {
+    var newtemp = (temp-32)*(5/9);
+    var newtemp2 = Math.round(newtemp*100)/100;
+    document.write(temp+"°F is "+newtemp2+"°C<br>");
+}
+
+</script>
+</body>
+</html>

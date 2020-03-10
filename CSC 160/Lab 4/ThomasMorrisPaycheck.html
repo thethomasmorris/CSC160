@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Paycheck Calculation</title>
+    </head>
+    <body>
+        <H1>Paycheck Calculation</H1>
+        <script>
+    
+        var hrRate = parseFloat(prompt("Enter your hourly pay rate: "));
+        while (hrRate<7.25){
+            hrRate = parseFloat(prompt("You entered an invalid amount. Enter your hourly pay rate: "));
+        }
+            
+        var numDays = parseInt(prompt("How many days did you work in the pay period? "));
+        while (numDays<0 || numDays>14){
+            numDays = parseInt(prompt("You entered an invalid amount. How many days did you work in the pay period?"));
+        }  
+            
+        var hrWorked;
+        var totalHr = 0;
+        
+        for (i=1; i<=numDays; ++i) {
+            hrWorked = parseFloat(prompt("Enter the number of hours worked on Day "+count+":"));
+            totalHr += hrWorked;
+        }
+        
+        var grossPay = totalHr*hrRate;
+        grossPay2 = Math.round(grossPay*100)/100;
+        document.write("Your gross pay is $"+grossPay2+".");
+            
+        </script>
+    </body>
+</html>

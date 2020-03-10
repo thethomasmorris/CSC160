@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>HTML Forms</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">    
+</head>
+<body>
+<header>
+    <h1>EKU Department of Computer Science</h1>
+</header>
+
+<nav>
+    <a href="indexforms.html">Home Page</a>
+    <a href="form.html">Form Example</a>
+    <a href="jsdom.html">JS DOM</a>
+    <a href="JSforms.html">Validated Form Example</a>
+</nav>
+
+<main>
+<br>
+<h1>Helpdesk Request </h1>
+<br><br>
+<form method="post" action="helpdesk.php"> 
+    <fieldset><legend>User Information:</legend>
+    <!-- use the for attribute with label for accessibility-->
+    <label for="name">Name:</label><input type="text" name="name" id="name" required="required" class="input"> <br>
+    <label for="email">Email:</label><input type="email" name="email" id="email" class="input"> <br>
+    <label for="pword">Password:</label><input type="password" name="pword" id="pword" class="input"> <br>
+    </fieldset>
+    
+    <br>
+    <label for="rday">Request Date:</label> <input type="date" name="rday" id="rday">
+    <br><br>
+    <label for="problem">What is your problem?<br></label>
+    <select name="problem" id="problem" size="1">
+        <option value="email" selected="selected">email not working</option>
+        <option value="boot">computer won't boot</option>
+        <option value="fan">my fan is loud</option>
+     </select>
+     <br><br>
+     <label for="os">What is your Operating System?<br></label>
+     <input type="radio" name="os" id="win10" value="win10">Windows 10<br>
+     <input type="radio" name="os" id="win8" value="win8">Windows 8<br>
+     <input type="radio" name="os" id="mac" value="mac">Mac OS<br>
+     <br><br>
+     <label for="browser">What browsers do you use?<br></label>
+     <input type="checkbox" name="edge" id="edge" value="yes">Edge<br>
+     <input type="checkbox" name="FireFox" id="FireFox" value="yes">FireFox<br>
+     <input type="checkbox" name="Chrome" id="Chrome" value="yes" checked=checked>Chrome<br><br>
+    <label>Comments: <br><textarea row="5" cols="80" name="comment" id="comment" maxlength="1600"></textarea></label>
+    <br>
+    <input type="submit"> <input type="reset">
+    
+</form>
+<br>
+</main>
+
+<footer>
+Copyright &copy; 2017 EKU CSC 313<br>
+<a href="mailto:youremail@eku.edu">youremail@eku.edu</a>
+</footer>
+
+</body>
+</html>

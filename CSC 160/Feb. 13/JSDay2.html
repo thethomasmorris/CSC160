@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Day 2</title>
+</head>
+<body>
+    <h1>Math with JS</h1>
+    <script>
+    //arithmetic operators let JS perform math
+    //+, -, *(multiply), /(division), %(modulus- remainder from long divison)
+        
+    var x = 5;
+    var y = 6;
+    document.write(x-y);
+    document.write("<br>");
+    document.write(y-x);
+    document.write("<br>");
+    document.write(x*y);
+    document.write("<br>");
+    document.write(x/y);
+    document.write("<br>");
+    document.write(x%y);
+    document.write("<br>");
+        
+    //modulus can be used to determine even/odd or divisibility(factors, multiple of)
+    document.write(x%2); //remainder is 1 so odd
+    document.write("<br>");
+    document.write(y%2); //remainder is 0 so even 
+    document.write("<br>");
+    document.write(25%5); //25 is divisible by 5
+    document.write("<br>");
+    // JS follows order of operations
+    // Please excuse my dear Aunt Sally.
+    
+    document.write(5 + 7 * 2); //answer: 19 *PE(MD)(AS)*
+    document.write("<br>");
+    document.write((5+7)*2); //answer:24
+    document.write("<br>");
+
+    // ++ (incriment) and -- (decrement)
+    x++;
+    document.write(x);
+    document.write("<br>");
+    x--;
+    document.write(x);
+    document.write("<br>");
+        
+    //pre- vs post- increment (works for decrement too)
+    document.write(x++); //prints x first and then incriments it by 1, prints 5
+    document.write("<br>");
+    document.write(x); //prints 6
+    document.write("<br>");
+    document.write(++x); //print 7
+    document.write("<br>");
+    document.write(x++ + y++);
+    document.write("<br>");
+    document.write(x); //prints 8 (result of increment)
+    document.write("<br>");
+    document.write(y); //prints 7 (result of increment)
+    document.write("<br>");
+    x = 11;
+    
+    // ** exponentiation operator (base**exponent)
+    document.write(2**3); //2 to the 3rd power (8)
+    document.write("<br>");
+    
+    // compound assignment operators: +=, -=, /=, %=
+    // x += 5 is shortcut for x = x + 5
+    document.write(x);
+    document.write("<br>");
+    x += 5;
+    document.write(x);
+    document.write("<br>");
+    
+    //parseFloat() and parseInt() functions convert strings to numbers
+    var numString = "5.5";
+    document.write(numString + 5); //prints 55 b/c concatenates 
+    document.write("<br>");
+    document.write(parseFloat(numString)+5);
+    document.write("<br>");
+    document.write(parseInt(numString)+5);
+    document.write("<br>");
+    // parceInt and parceFloat does not perminately change the variable
+    
+    //do math with  user input
+    //prompt() function collcts input as a string
+    //we must change to number to do math with it
+    //var age = prompt("Enter your age: ");
+    //document.write("<br>");
+    //var age2 = parseFloat(age)+ 5;
+    //document.write("In 5 years you will be "+age2+" years old.");
+    //document.write("<br>");
+    
+    //number rounding
+    var float = 3.6875;
+    document.write(Math.round(float))
+    document.write("<br>");
+        
+    //must do math to round to 2 decimal places
+    var float2 = Math.round((float*100))/100
+    document.write(float2)
+    document.write("<br>");
+    
+    </script>
+</body>
+</html>

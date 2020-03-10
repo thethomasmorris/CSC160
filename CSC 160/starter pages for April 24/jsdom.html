@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>HTML DOM</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">    
+</head>
+
+<body>
+    <header>
+    <h1 id="head1">HTML Document Object Model (DOM)</h1>
+    
+</header>
+    
+<nav>
+    <a href="indexforms.html">Home Page</a>
+    <a href="form.html">Form Example</a>
+    <a href="jsdom.html">JS DOM</a>
+    <a href="JSforms.html">Validated Form Example</a>
+    
+</nav>
+    
+<main id="main">    
+    <h2 id="head2">The HTML DOM is a way to get, change, add or delete HTML elements using JavaScript</h2>
+    
+    <h3> All HTML elements are defined as objects</h3>
+    <h3> A property is a value you can get or set like changing the content of an HTML element.</h3>
+    <h3> A method (like a function) is an action you can do like adding or deleting an HTML element.</h3>
+    
+    <h3> With the DOM, JavaScript has a way to create dynamic HTML:</h3>
+    <ul id="list1"> 
+    <li>Add new HTML elements</li>
+    <li>Change HTML elements</li>
+    <li>Change CSS on the page</li>
+    <li>Remove HTML elements</li>
+    <li>React to HTML events like a form button being clicked</li>
+    <li>Create new HTML events</li>
+    </ul>
+    <a href="https://www.w3schools.com/js/js_htmldom.asp" > source: https://www.w3schools.com/js/js_htmldom.asp</a>
+    <br><br>
+    <a id="w3" href="https://www.w3schools.com/js/js_htmldom.asp" > source: https://www.w3schools.com/js/js_htmldom.asp</a>
+    
+    <p id=p2>This is another paragraph.</p>
+    
+<br>
+<br>
+</main>  
+    
+<script>
+    // we have already add new html content to the page
+    document.write("Today's date: "+Date()+"<br>");
+    
+    //output a bulleted list from the array formatted with HTML
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    var text = "<h1>The work days of the week:</h1><ul>";
+    for (i=0; i<days.length; i++){
+        text += "<li>"+days[i]+"</li>";
+    }
+    text += "</ul><br>";
+    document.write(text);
+    
+    //add a new line item to our bulleted list
+    //create a new HTML element for page
+    
+    var newli = document.createElement("li");
+    //create a new text node to add to the element
+    var litext = document.createTextNode("New line item");
+    //add text node to the element 
+    newli.appendChild(litext);
+    //retrieve the <ul> element that is the parent
+    var list1 = document.getElementById("list1");
+    //add new <li> element to the <ul> element
+    list1.appendChild(newli);
+    
+    // add a second sentence to paragraph
+    var newp2 = document.createElement("p2");
+    var p2text = document.createTextNode(" This is a second sentence in my paragraph");
+    newp2.appendChild(p2text);
+    var p2 = document.getElementById("p2");
+    p2.appendChild(newp2);
+    
+    // change HTML elements with JS - change the text or change attributes
+    var w3 = document.getElementById("w3"); //variable can be named anything - does not have to match ID - this gets our <a>
+    // change the text description of the <a> 
+    w3.innerHTML = "W3Schools website";
+    //change the href attribute
+    w3.href = "https://www.w3schools.com";
+    
+    //change CSS on the page 
+    var white = 1;
+    if(white==1){
+        document.getElementById("head2").style.color = "white";
+    }
+    
+    document.body.style.backgroundColor = "tan";
+    
+    // remove an html element 
+    main.removeChild(document.getElementById("p2"));
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>JS with Forms</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">    
+</head>
+<body>
+<header>
+    <h1>EKU Department of Computer Science</h1>
+</header>
+
+<nav>
+    <a href="indexforms.html">Home Page</a>
+    <a href="form.html">Form Example</a>
+    <a href="jsdom.html">JS DOM</a>
+    <a href="JSforms.html">Validated Form Example</a>
+</nav>
+
+<main>
+<br>
+<h1>Computer Science Summer Camp Timesheet</h1>
+<br><br>
+
+<p id="error"></p>
+    
+<form id="time" onSubmit="return false"> 
+    
+    <label for="name">Name:</label><input type="text" name="name" id="name" required="required"> <br><br>
+    
+    <label for="rday">Monday's Date:</label> <input type="date" name="rday" id="rday" required="required">
+    <br><br>
+    
+    <label for="emp">What type of employee are you?<br></label>
+    <select name="emp">
+        <option id="student" value="student">Student Worker</option>
+        <option id="faculty" value="faculty">Faculty Member</option>
+    </select><br><br>
+    
+    <label for="mon">Hours Worked Monday:</label><input type="text" name="mon" id="mon" required="required"> <br><br>
+    
+    <label for="tues">Hours Worked Tuesday:</label><input type="text" name="tues" id="tues" required="required"> <br><br>
+    
+    <label for="wed">Hours Worked Wednesday:</label><input type="text" name="wed" id="wed" required="required"> <br><br>
+    
+    <label for="thur">Hours Worked Thursday:</label><input type="text" name="thur" id="thur" required="required"> <br><br>
+    
+    <label for="fri">Hours Worked Friday:</label><input type="text" name="fri" id="fri" required="required"> <br><br>
+    
+    <button onClick="processForm()" id="process">Submit Time</button> <input type=reset >
+    
+</form>    
+
+<p id="result"></p>
+<p id="employee"></p>
+<p id="salary"></p>
+    
+<br>
+</main>
+    
+<script>
+    function processForm(){
+        // setup our form so we have access to the data
+        var time = document.getElementById("time");
+        
+        //setup variable to control when we get final output
+        var hours = true;
+        var error = document.getElementById("error");
+        //check to make sure hours are not over 8
+        if(timeform.mon.value>8){
+            timeform.mon.style.backgroundColor("red");
+            error.innerHTML = "Error - You can only work up to 8 hours per day.";
+            error.style.color = "red";
+            hours = false;
+        }else{
+            timeform.mon.style.backgroundColor = "white";
+        }
+        if(timeform.tues.value>8){
+            timeform.tues.style.backgroundColor("red");
+            error.innerHTML = "Error - You can only work up to 8 hours per day.";
+            error.style.color = "red";
+            hours = false;
+        }else{
+            timeform.tues.style.backgroundColor = "white";
+        }
+        if(timeform.wed.value>8){
+            timeform.wed.style.backgroundColor("red");
+            error.innerHTML = "Error - You can only work up to 8 hours per day.";
+            error.style.color = "red";
+            hours = false;
+        }else{
+            timeform.mon.style.backgroundColor = "white";
+        }
+        if(timeform.thur.value>8){
+            timeform.thur.style.backgroundColor("red");
+            error.innerHTML = "Error - You can only work up to 8 hours per day.";
+            error.style.color = "red";
+            hours = false;
+        }else{
+            timeform.thur.style.backgroundColor = "white";
+        }
+        if(timeform.fri.value>8){
+            timeform.fri.style.backgroundColor("red");
+            error.innerHTML = "Error - You can only work up to 8 hours per day.";
+            error.style.color = "red";
+            hours = false;
+        }else{
+            timeform.fri.style.backgroundColor = "white";
+        }
+        if (hours){
+            //get rid of the error message
+            error.innerHTML = "";
+            
+            //calculate the number of hours worked
+            var totalTime = Number(timeform.mon.value)+Number(timeform.tues.value)+Number(timeform.wed.value)+Number(timeform.thur.value)+Number(timeform.fri.value);
+            var day = new Date(timeform.rday.value);
+            var formattedDay = (day.getMonth()+1)+"-"+day.getDate()+"-"+day.getFullYear();
+            
+            //set the <p> element text for result
+            document.getElementById("result").innerHTML = "Time submitted successfully for week beginning "+formattedDay+"!<br>You worked "+totalTime+" hours this week.";
+            
+        }
+    }   
+    
+</script>
+
+<footer>
+Copyright &copy; 2017 EKU CSC 160<br>
+<a href="mailto:youremail@eku.edu">youremail@eku.edu</a>
+</footer>
+
+</body>
+</html>

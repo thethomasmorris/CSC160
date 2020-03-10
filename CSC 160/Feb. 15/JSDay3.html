@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Day 3</title>
+</head>
+<body>
+
+<h1>Making decisions in JavaScript</h1>
+<h2>If and If/Else Statements</h2>
+    
+<script>
+// If statements allow us to make decisions about what code to execute
+// the basic if makes a single decision based on one condition
+// if condition is true, the code in curly braces executes
+// if condition is false, that code is skipped and nothing happens
+    
+
+var age = 11;
+
+if (age>=16) {
+    document.write("You can drive.<br>");
+}
+document.write("This is out of the if statement.<br>");
+
+if (age<12) {
+    document.write("You are in elementary school.<br>");
+}
+
+age = parseInt(prompt("Please enter your age: "));
+
+// sometimes we want one thing to happen if condition is true and something else to happen if condition is false
+    
+if(age >= 18) {
+    document.write("You are old enough to vote.<br>");
+} else {
+    document.write("You are not old enough to vote.<br>");
+}
+
+//comparison operators
+// >, <, >=, <=, == (equal), != (not equal)
+// you can also have compound criteria
+// && (and), || (or) pipe symbols is shifted backslash
+
+// and example
+if (age>=16 && age<18) {
+    document.write("You can drive, but you can not vote yet. <br>");
+}
+    
+// or example - only one condition must be true to execture IF
+var answer = prompt("Do you have your driver's license? Enter Y or N as your answer.");
+
+if (answer == "y" || answer == "Y") {
+    document.write("You are a licensed driver.<br>");
+} else {
+    document.write("You are not a licensed driver.<br>");
+}
+</script>
+    
+</body>
+
+</html> 
